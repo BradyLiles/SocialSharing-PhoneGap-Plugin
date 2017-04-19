@@ -130,7 +130,7 @@ public class SocialSharing extends CordovaPlugin {
     final SocialSharing plugin = this;
     cordova.getThreadPool().execute(new SocialSharingRunnable(callbackContext) {
       public void run() {
-        final Intent draft = new Intent(Intent.ACTION_SEND_MULTIPLE);
+        final Intent draft = new Intent(Intent.ACTION_SENDTO);
         if (notEmpty(message)) {
           Pattern htmlPattern = Pattern.compile(".*\\<[^>]+>.*", Pattern.DOTALL);
           if (htmlPattern.matcher(message).matches()) {
